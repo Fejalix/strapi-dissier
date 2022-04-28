@@ -1,7 +1,7 @@
 # symfony--1-2-test3
 # symfony blog
 ## by Félix Janot
-
+To set up the project do a "composer install"
 
 ## FMy project
 - Symfony
