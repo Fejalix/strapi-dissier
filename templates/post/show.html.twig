@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block body %}
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1 style="margin-top: 50px; margin-bottom: 100px">{{ post.title }}</h1>
+        <div style="margin-bottom: 50px;">
+            <img src="{{ asset(imagepath ~ post.image) }}">
+        </div>
+        <div style="width: 80%">
+            <p>
+                {{ post.content }}
+            </p>
+        </div>
+        <div style="display: flex; justify-content: end; width: 80%; margin-top: 25px;margin-bottom: 50px;">
+            <small class="text-muted">{{ post.createdAt ? post.createdAt|date('d-m-Y') : '' }}</small>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}

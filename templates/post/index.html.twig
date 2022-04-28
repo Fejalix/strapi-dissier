@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post index{% endblock %}
+
+{% block body %}
+    <h1>Post index</h1>
+
+
+        <div class="album py-5 bg-light">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for post in posts %}
+                <div class="col">
+                    <div class="card shadow-sm" style="margin-top: 25px">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="255" src="{{ asset(imagepath ~ post.image) }}">
+                        <div class="card-body">
+                            <h2>{{ post.title }}</h2>
+                            <p class="card-text">{{ post.subtitle }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="{{ path('post_show', {'id': post.id}) }}" class="btn btn-primary my-2">View</a>
+                                </div>
+                                <small class="text-muted">{{ post.createdAt ? post.createdAt|date('d-m-Y') : '' }}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+        {% endfor %}
+
+            </div>
+        </div>
+
+
+
+{% endblock %}
